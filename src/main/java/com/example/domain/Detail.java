@@ -12,6 +12,8 @@ public class Detail {
 	private Integer id;
 	/** リーグ名 */
 	private String league_name;
+	/** チーム名 */
+	private String team_name;
 	/** 本拠地 */
 	private String headquarters;
 	/** 発足日 */
@@ -21,8 +23,8 @@ public class Detail {
 
 	@Override
 	public String toString() {
-		return "Detail [id=" + id + ", league_name=" + league_name + ", headquarters=" + headquarters
-				+ ", inauguration=" + inauguration + ", history=" + history + "]";
+		return "Detail [id=" + id + ", league_name=" + league_name + ", team_name=" + team_name + ", headquarters="
+				+ headquarters + ", inauguration=" + inauguration + ", history=" + history + "]";
 	}
 
 	public Integer getId() {
@@ -39,6 +41,14 @@ public class Detail {
 
 	public void setLeague_name(String league_name) {
 		this.league_name = league_name;
+	}
+
+	public String getTeam_name() {
+		return team_name;
+	}
+
+	public void setTeam_name(String team_name) {
+		this.team_name = team_name;
 	}
 
 	public String getHeadquarters() {
