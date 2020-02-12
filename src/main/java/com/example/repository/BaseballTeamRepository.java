@@ -11,6 +11,11 @@ import org.springframework.stereotype.Repository;
 
 import com.example.domain.Detail;
 
+/**
+ * 野球チームに関する情報を扱うリポジトリ.
+ * @author suzukikunpei
+ *
+ */
 @Repository
 public class BaseballTeamRepository {
 	@Autowired
@@ -40,9 +45,10 @@ public class BaseballTeamRepository {
 		List<Detail> detailList = template.query(sql, DETAIL_ROW_MAPPER);
 		return detailList;
 	}
-	
+
 	/**
 	 * 主キーからチーム詳細情報を取得.
+	 * 
 	 * @param id チーム名ID
 	 * @return チーム詳細情報
 	 */
@@ -51,10 +57,6 @@ public class BaseballTeamRepository {
 		SqlParameterSource param = new MapSqlParameterSource().addValue("id", id);
 		Detail detail = template.queryForObject(sql, param, DETAIL_ROW_MAPPER);
 		return detail;
-		}
-	
-	
-	
-	
+	}
 
 }

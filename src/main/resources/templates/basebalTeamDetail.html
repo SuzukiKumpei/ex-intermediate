@@ -5,10 +5,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
-	<form th:action="@{/ex01/showList}">
-
 		<strong>球団名</strong>
 		<div th:text="${detail.team_name}"></div>
 		<strong>本拠地</strong>
@@ -17,10 +13,8 @@
 		<div th:text="${detail.inauguration}"></div>
 		<strong>歴史</strong>
 		<pre th:text="${detail.history}"></pre>
-
+	<form th:action="@{/ex01/showList}">
 		<button name="back">戻る</button>
-
 	</form>
-
 </body>
 </html>
