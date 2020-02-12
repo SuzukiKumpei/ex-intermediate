@@ -22,6 +22,11 @@ public class BaseballTeamController {
 	@Autowired
 	private BaseBallTeamSerive baseBallTeamSerive;
 	
+	/**
+	 * チーム名一覧を表示する.
+	 * @param model
+	 * @return チーム名一覧
+	 */
 	@RequestMapping("/showList")
 	public String showList(Model model) {
 		List<Detail> detailList = baseBallTeamSerive.showList();
@@ -29,6 +34,19 @@ public class BaseballTeamController {
 		
 		return "baseballTeamList";
 	}
+	
+	/**
+	 * チーム詳細情報を表示させる.
+	 * @param model リクエストパラメータ
+	 * @param id　チームID
+	 * @return チーム詳細情報
+	 */
+	@RequestMapping("/showDetail")
+	public String showDetail(Model model,String id) {
+	model.addAttribute("detail",baseBallTeamSerive.showDetail(Integer.parseInt(id)));
+	return "basebalTeamDetail";
+	}
+	
 	
 	
 	

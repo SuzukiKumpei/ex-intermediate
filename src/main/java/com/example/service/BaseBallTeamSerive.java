@@ -10,6 +10,7 @@ import com.example.repository.BaseballTeamRepository;
 
 /**
  * チーム名一覧の操作をするサービス.
+ * 
  * @author suzukikunpei
  *
  */
@@ -21,18 +22,20 @@ public class BaseBallTeamSerive {
 
 	/**
 	 * チーム名一覧を全件取得する.
+	 * 
 	 * @return チーム名一覧
 	 */
 	public List<Detail> showList() {
-		List<Detail> detailList = baseballTeamRepository.findAll();
-		return detailList;
+		return baseballTeamRepository.findAll();
 	}
-	
+
+	/**
+	 * チームの詳細情報を取得.
+	 * @param id チーム名ID
+	 * @return チーム詳細情報
+	 */
 	public Detail showDetail(Integer id) {
-		Detail detail = baseballTeamRepository.load(id);
-		return detail;
+		return baseballTeamRepository.load(id);
 	}
-	
-	
 
 }

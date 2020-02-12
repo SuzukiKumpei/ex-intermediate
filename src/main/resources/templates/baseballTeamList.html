@@ -7,14 +7,14 @@
 <body>
 
 	<strong>野球チーム一覧</strong>
-	
-		<div th:each="detail:${detailList}">
-		<a th:href="@{/ex01/showList}">
-			<span th:text="${detail.team_name}"></span>
-			</a>
-		</div>
-		
-		
+
+	<div th:each="detail:${detailList}">
+		<a th:href="@{'/ex01/showDetail?id=' +${detail.id}}"><span
+			th:text="${detail.team_name}"></span>
+		</a>
+	</div>
+
+
 
 
 </body>
